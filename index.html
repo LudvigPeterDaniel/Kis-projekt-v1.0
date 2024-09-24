@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regisztráció</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #e9ecef;
+            background-image: url('img/bg.jpg');
+            background-size: cover;
+            font-family: 'Open Sans', sans-serif;
+        }
+        .navbar {
+            background: linear-gradient(to bottom, #003c7d 0%, #007bff 100%);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .navbar-brand {
+            color: #fff;
+            font-weight: 600;
+        }
+        .navbar-nav .nav-link {
+            color: #fff;
+            font-weight: 400;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .card {
+            margin-top: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .card-header {
+            background-color: #007bff;
+            color: #fff;
+            font-weight: 600;
+            border: none    ;
+        }
+        .card-body {
+            padding: 1.5rem;
+            background: linear-gradient(to bottom, #007bff 0%, #fff 100%);
+            color: #000000;
+        }
+        .btn {
+            margin-top: 1.5rem;
+            border-radius: 0.25rem;
+            padding: 0.75rem 1.25rem;
+            font-weight: 600;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.2s ease-in-out;
+        }
+        .btn:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #003c7d;
+            transform: translateY(-2px);
+        }
+        .btn-primary {
+            background-color: #003c7d;
+            border-color: #003c7d;
+        }
+        .btn-outline-secondary {
+            color: #003c7d;
+            border-color: #003c7d;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark">
+        <a class="navbar-brand" href="#">Regisztráció</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+                aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Regisztráció <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title">Regisztráció</h3>
+                    </div>
+                    <div class="card-body">
+                        <form action="regisztracio.php" method="post">
+                            <div class="form-group">
+                                <label for="nev"><i class="fas fa-user"></i> Név</label>
+                                <input type="text" class="form-control" id="nev" name="nev" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="jelszo"><i class="fas fa-lock"></i> Jelszó</label>
+                                <input type="password" class="form-control" id="jelszo" name="jelszo" required>
+                                <button type="button" class="btn btn-outline-secondary" onclick="showPassword()">Jelszó megjelenítése</button>
+                                <button type="button" class="btn btn-outline-secondary" onclick="generatePassword()">Jelszó generálás</button>
+                            </div>
+                            <div class="form-group">
+                                <label for="kor"><i class="fas fa-birthday-cake"></i> Életkor: <span id="kor-ertek">18</span></label>
+                                <input type="range" class="form-control-range" id="kor" name="kor" min="18" max="100" value="18"
+                                       oninput="document.getElementById('kor-ertek').innerHTML = this.value;">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Regisztrálás</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function showPassword() {
+            let password = document.getElementById("jelszo");
+            if (password.type === "password") {
+                password.type = "text";
+            } else {
+                password.type = "password";
+            }
+        }
+        function generatePassword() {
+            let chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let password = '';
+            for (let i = 0; i < 12; i++) {
+                password += chars.charAt(Math.floor(Math.random() * chars.length));
+            }
+            document.getElementById('jelszo').value = password;
+        }
+    </script>
+</body>
+</html>
+
