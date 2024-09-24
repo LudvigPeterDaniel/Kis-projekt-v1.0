@@ -1,32 +1,95 @@
 body {
+    background-color: #e9ecef;
+    background-image: url('img/bg.jpg');
+    background-size: cover;
     font-family: 'Open Sans', sans-serif;
-    background-color: #fafafa;
+}
+video{
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+}
+.navbar {
+    background: linear-gradient(to bottom, #003c7d 0%, #007bff 100%);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.navbar-brand {
+    color: #fff;
+    font-weight: 600;
+}
+.navbar-nav .nav-link {
+    color: #fff;
+    font-weight: 400;
+}
+.form-group {
+    margin-bottom: 1.5rem;
+}
+.card {
+    margin-top: 1.5rem;
+    border: none;
+    box-shadow: rgba(104, 46, 240, 0.4) 0px 5px, rgba(111, 46, 240, 0.3) 0px 10px, rgba(111, 46, 240, 0.2) 0px 15px, rgba(240, 46, 170, 0.1) 0px 20px, rgba(240, 46, 170, 0.05) 0px 25px;
+}
+.card-header {
+    background-color: #007bff;
+    color: #fff;
+    font-weight: 600;
+    border: none    ;
+}
+.card-body {
+    padding: 1.5rem;
+    background: linear-gradient(to bottom, #007bff 0%, #445f94 100%);
+    color: #000000;
+    border: none;
+}
+.btn {
+    margin-top: 1.5rem;
+    border-radius: 0.25rem;
+    padding: 0.75rem 1.25rem;
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease-in-out;
+}
+.btn:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #003c7d;
+    transform: translateY(-2px);
+}
+.btn-primary {
+    background-color: #003c7d;
+    border-color: #003c7d;
+}
+.btn-outline-secondary {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+.input-group .form-control {
+    margin-bottom: 0; 
 }
 
-h1 {
-    text-align: center;
-    font-size: 36px;
-    margin-bottom: 20px;
+.input-group .btn {
+    margin-bottom: 0; 
 }
 
-form {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.input-group-append .btn {
+    height: calc(100% + 2px); 
+    align-items: center; 
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
+.input-group {
+    display: flex;
+    align-items: center; 
 }
 
-input[type="text"],
-input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
+.input-group .form-control,
+.input-group .btn {
+    line-height: normal;
+} 
+.container {
+    margin-bottom: 100px;
 }
