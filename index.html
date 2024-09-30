@@ -35,30 +35,30 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Regisztráció</h3>
+                        <h3 class="card-title neonText">Regisztráció</h3>
                     </div>
                     <div class="card-body">
                         <form action="index.html" method="get">
                             <div class="form-group">
-                                <label for="nev"><i class="fas fa-user"></i> Név</label>
+                                <label for="nev" class="neonText"><i class="fas fa-user neonText"></i> Név</label>
                                 <input type="text" class="form-control" id="nev" name="nev" required>
                             </div>
                             <div class="form-group">
-                                <label for="email"><i class="fas fa-envelope"></i> E-mail</label>
+                                <label for="email" class="neonText"><i class="fas fa-envelope neonText"></i> E-mail</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
                             <div class="form-group">
-                                <label for="jelszo"><i class="fas fa-lock"></i> Jelszó</label>
+                                <label for="jelszo" class="neonText"><i class="fas fa-lock neonText"></i> Jelszó</label>
                                     <input type="password" class="form-control" id="jelszo" name="jelszo" required>
-                                    <button type="button" class="btn btn-outline-secondary" onclick="showPassword()"><i class="fas fa-eye"></i></button>
-                                    <button type="button" class="btn btn-outline-secondary" onclick="generatePassword()">Jelszó generálás</button>
+                                    <button type="button" class="btn btn-outline-secondary neonText" onclick="showPassword()"><i class="fas fa-eye"></i></button>
+                                    <button type="button" class="btn btn-outline-secondary neonText" onclick="generatePassword()">Jelszó generálás</button>
                             </div>                            <div class="form-group">
-                                <label for="kor"><i class="fas fa-birthday-cake"></i> Életkor: <span id="kor-ertek">18</span></label>
+                                <label for="kor" class="neonText"><i class="fas fa-birthday-cake neonText"></i> Életkor: <span id="kor-ertek">18</span></label>
                                 <input type="range" class="form-control-range" id="kor" name="kor" min="18" max="100" value="18"
                                        oninput="document.getElementById('kor-ertek').innerHTML = this.value;">
                             </div>
                             <div class="form-group">
-                                <label for="foglalkozas"><i class="fas fa-briefcase"></i> Foglalkozás</label>
+                                <label for="foglalkozas" class="neonText"><i class="fas fa-briefcase neonText"></i> Foglalkozás</label>
                                 <select class="form-control" id="foglalkozas" name="foglalkozas">
                                     <option value="">Válasszon</option>
                                     <option value="tanár">Tanár</option>
@@ -69,7 +69,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="nem"><i class="fas fa-venus-mars"></i> Nem</label>
+                                <label for="nem" class="neonText"><i class="fas fa-venus-mars neonText"></i> Nem</label>
                                 <select class="form-control" id="nem" name="nem">
                                     <option value="">Válasszon</option>
                                     <option value="férfi">Férfi</option>
